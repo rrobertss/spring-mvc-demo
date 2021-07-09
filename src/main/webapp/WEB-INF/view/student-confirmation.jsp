@@ -4,17 +4,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Main menu</title>
+<title>Student confirmation</title>
 </head>
 <body>
 
-	<h2>Spring MVC Demo - home page</h2>
-
-	<hr>
-
-	<a href="hello/showForm">Hello World form</a>
+	The student is confirmed: ${student.firstName} ${student.lastName}
 	<br />
-	<a href="student/showForm">Student form</a>
+	The student country is :  ${student.country}
 
 </body>
 </html>

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * <p></p><p>2 lip 2021</p>
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  *
  */
 @Controller
+@RequestMapping("/hello")
 public class HelloWorldController {
 
 	
@@ -47,24 +49,20 @@ public class HelloWorldController {
 		String message = "Hello hello " + student;
 		
 		model.addAttribute("message", message);
-		
-		
+	 
 		return "helloworld";
 	}
 	
 	
 	@RequestMapping("/processFormVersionThree")
-	public String methodRequestParam(HttpServletRequest request, Model model) {
-		
-		String student = request.getParameter("studentName");
-		
+	public String methodRequestParam(@RequestParam("studentName") String student, Model model) {
+
 		student = student.toUpperCase();
 		
-		String message = "Hello hello " + student;
+		String message = "Hello hello " + student+". This is RequestParam example.";
 		
 		model.addAttribute("message", message);
-		
-		
+				
 		return "helloworld";
 	}
 	
