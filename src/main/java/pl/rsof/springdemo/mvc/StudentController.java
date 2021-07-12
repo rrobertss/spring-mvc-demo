@@ -42,7 +42,7 @@ public class StudentController {
 	public String processForm(@ModelAttribute("student") Student student) {
 		
 		//only println
-		System.out.println("Student: "+student.getFirstName() + " " + student.getLastName());
+//		System.out.println("Student: "+student.getFirstName() + " " + student.getLastName());
 		
 		return "student-confirmation";
 	}
