@@ -31,6 +31,7 @@ public class Student {
 		countryOptions.put("PL", "Poland");
 		countryOptions.put("BR ", "Brasil");
 		countryOptions.put("DE", "Germany");
+		countryOptions.put("DK", "Denmark");
 		countryOptions.put("PT", "Portugal");
 		countryOptions.put("RU", "Russian");
 		countryOptions.put("IT", "Italy");
