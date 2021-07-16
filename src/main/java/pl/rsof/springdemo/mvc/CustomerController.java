@@ -47,6 +47,9 @@ public class CustomerController {
 	 @RequestMapping("/processCustomerForm")
 	 public String processForm(@Valid @ModelAttribute("customer") Customer customer, BindingResult bindingResult) {
 		 
+		 // do pliku messages.properties - nazwy bledow do nadpisania
+		 System.out.println("Binding result (for messages.properties): "+bindingResult);
+		 
 		 if (bindingResult.hasErrors()) {
 			 return "customer-form";
 		 }
