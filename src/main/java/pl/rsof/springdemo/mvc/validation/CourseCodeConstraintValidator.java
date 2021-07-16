@@ -16,13 +16,24 @@ import javax.validation.ConstraintValidatorContext;
  */
 public class CourseCodeConstraintValidator implements ConstraintValidator<CourseCode, String>{
 
+	
+	private String coursePrefix;
+	
+	
+	@Override
+	public void initialize(CourseCode courseCode) {
+		coursePrefix = courseCode.value();
+	}
+
 	@Override
 	public boolean isValid(String value, ConstraintValidatorContext context) {
-		
-		
-		
-		
-		return false;
+		if (value != null) {
+			return value.startsWith(coursePrefix);
+		}
+		else {
+			// jeśli nic nie podano -> niech przejdzie dalej, pole nie jest wymagane
+			return true;
+		}
 	}
 
 	

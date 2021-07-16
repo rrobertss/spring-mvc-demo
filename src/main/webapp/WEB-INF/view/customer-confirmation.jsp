@@ -13,5 +13,9 @@
 	Free passes: ${customer.freePasses}
 	<br> 
 	Polish postal code: ${customer.postalCode}
+	<br>
+	Course code is : ${customer.courseCode}
+	<br>
+	Choose currency is : ${customer.currency}
 </body>
 </html>

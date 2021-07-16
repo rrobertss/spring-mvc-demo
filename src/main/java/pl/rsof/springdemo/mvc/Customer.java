@@ -12,6 +12,9 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import pl.rsof.springdemo.mvc.validation.CourseCode;
+import pl.rsof.springdemo.mvc.validation.Currency;
+
 /**
  * <p></p><p>14 lip 2021</p>
  * @author RS
@@ -33,6 +36,13 @@ public class Customer {
 
 	@Pattern(regexp = "^[0-9]{2}-[0-9]{3}", message = "Błędny kod pocztowy, wzór: 00-000")
 	private String postalCode;
+	
+	@CourseCode(value = "CC", message = "Błędny początek kodu kursu. Powinien zaczynać się od 'CC'")
+	private String courseCode;
+	
+	
+	@Currency(value = {"EUR", "USD", "CHF", "GBP"}, message = "Dopuszczalne waluty to: EUR, USD, CHF i GBP")
+	private String currency;
 	
 	
 	public String getFirstName() {
@@ -65,6 +75,22 @@ public class Customer {
 
 	public void setPostalCode(String postalCode) {
 		this.postalCode = postalCode;
+	}
+
+	public String getCourseCode() {
+		return courseCode;
+	}
+
+	public void setCourseCode(String courseCode) {
+		this.courseCode = courseCode;
+	}
+
+	public String getCurrency() {
+		return currency;
+	}
+
+	public void setCurrency(String currency) {
+		this.currency = currency;
 	}
 
 }
